@@ -4,15 +4,16 @@ import FlashSales from './Component/FlashSales';
 import NavbarComponent from './Component/NavbarComponent';
 import { Navbardata } from './Component/NavbarComponent';
 import { Spinner } from '@chakra-ui/react';
-
+import products from "../src/products.json"
 
 
 function App() {
   const [dataproducts,setDataProducts] = useState([]);
-  const [loading,setLoading] = useState(false)
+  const [loading,setLoading] = useState(false);
+
 
   const FetchFakeApi = async () => {
-      const FakeStoreUrl = 'https://fakestoreapi.com/products?limit=4';
+      const FakeStoreUrl = products;
       const Fetchurl = await fetch(FakeStoreUrl);
   
       const Fetchwait = await Fetchurl.json();
@@ -36,7 +37,7 @@ function App() {
       <NavbarComponent Navholders={Navbardata}/>
       {loading
         ?
-        <FlashSales dataproducts={dataproducts}/>
+        <FlashSales products={products}/>
         :
         <div style={{ display:"flex",justifyContent:"center",alignItems:"center",marginTop:"150px"}}>
             <Spinner size='xl'/>

@@ -1,15 +1,16 @@
     import React, {useState} from "react";
-    
+
     import {BiUser,BiMenuAltLeft,BiX} from "react-icons/bi"
-    import {BsHeart,BsCart3} from "react-icons/bs";
+    import {BsHeart} from "react-icons/bs";
 //    import { Flex, } from "@chakra-ui/react";
 import Searchitems from "./SearchItems";
 
+
     const NavbarComponent = (props) => {
      const [toggle,setToggle] = useState(false);
-
    const ToggleMenu = () => setToggle(!toggle);
-        
+   
+ 
     const Navlists = [];
     const Navholders = props.Navholders;
     for(let occurence = 0; occurence < Navholders.length; occurence++) {
@@ -63,10 +64,8 @@ style={{
 
  <div>
 
-    <BsCart3 size="25"/>
-            {/* <span className="navcart">
-                {Navholder.NavCart}
-           </span> */}
+ 
+      
  </div>
 
     </div>

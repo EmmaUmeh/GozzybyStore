@@ -1,5 +1,5 @@
 
-import { Button, Flex ,Image,Text } from '@chakra-ui/react'
+import {  Flex ,Image,Text } from '@chakra-ui/react';
 const FlashSales = (props) => {
 
     return(
@@ -7,7 +7,7 @@ const FlashSales = (props) => {
         <div className='flashsale'>
       <Flex justifyContent="space-between" gridGap="50px" alignItems="center" className='flashsalechild'>
       {
-            props.dataproducts.map((dataproduct) => (
+            props.products.map((product) => (
                 <div className='dataimg' >
                     
                     <div 
@@ -26,13 +26,13 @@ const FlashSales = (props) => {
                     }} className='flashsaleImg'>
 
                     <Image 
-                    src={dataproduct.image}
+                    src={product.image}
                      alt="product"
                      objectFit='cover'
                      />
                      <Text mt="5px">
                         <div style={{ display:"flex",alignItems:"center"}}>
-                        <span>{dataproduct.title}</span>
+                        <span>{product.title}</span>
                         </div>
                      </Text>
 
@@ -41,14 +41,26 @@ const FlashSales = (props) => {
                      <div style={{ display:"flex",alignItems:"center"}}>
                      <Text fontSize='md'>Price:</Text>
                         <strong>
-                        {'$' + dataproduct.price}
+                        {'$' + product.price}
                         </strong>
                      </div>
-
-                     <Button colorScheme='teal' variant='solid'>Add to Cart</Button>
+                            <button className="snipcart-add-item"
+                            style={{backgroundColor:'teal', color:'white',padding:'5px 5px 5px 5px',borderRadius:'5px',fontWeight:'600px'}}
+                data-item-id={product.id}
+                data-item-image={product.image}
+                data-item-name={product.title}
+                data-item-price={product.price}
+                      >
+          Add to Cart
+        </button>
                      </div>
                   
                     </div>
+
+                      <div>
+                      </div>
+
+                    
                 </div>
             ))
     }
@@ -58,5 +70,8 @@ const FlashSales = (props) => {
         </div>
     )
 }
+
+
+
 
 export default FlashSales;
