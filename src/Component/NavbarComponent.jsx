@@ -1,8 +1,9 @@
-    import React,{useState} from "react";
-    import { Container } from 'react-bootstrap';
+    import React, {useState} from "react";
+    
     import {BiUser,BiMenuAltLeft,BiX} from "react-icons/bi"
-    import {BsHeart,BsCart3,BsSearch} from "react-icons/bs";
-    import Badge from 'react-bootstrap/Badge';
+    import {BsHeart,BsCart3} from "react-icons/bs";
+//    import { Flex, } from "@chakra-ui/react";
+import Searchitems from "./SearchItems";
 
     const NavbarComponent = (props) => {
      const [toggle,setToggle] = useState(false);
@@ -14,18 +15,25 @@
     for(let occurence = 0; occurence < Navholders.length; occurence++) {
     const Navholder = Navholders[occurence];
     const Navlist =
-    <div className="Navbarcontainer" key={Navholder.id}>
+     <div className="Navbarcontainer" key={Navholder.id}>
 
-    <Container>
-        <div className="Navchild">
-        <div className="Navlogo">
+   
+
+
+<div 
+style={{
+    display:"flex", justifyContent:"space-around",alignItems:"center",padding:"10px 5px 10px 5px"
+}}>
+
+        <div className="Navlogo" >
     <img src={Navholder.Navlogo} alt={Navholder.NavlogoAlt}/>
     </div>
 
-    <div className="Navinput">
-        <input type="text" placeholder={Navholder.NavPlaceholder}/>
-        <button className="Navsearch"><BsSearch/></button>
-    </div>
+ 
+<div className={toggle ? 'Navchildsearch' : 'Navchildsearch expanded'}>
+<div>
+    <Searchitems />
+ </div>
 
     <div className="useroptions">
 
@@ -48,7 +56,7 @@
         <div>
             <BsHeart size="25"/>
             <span className="badgecounter">
-            <Badge bg="danger">0</Badge>
+            
             </span>
            
         </div>
@@ -56,15 +64,13 @@
  <div>
 
     <BsCart3 size="25"/>
-    <span className="badgecounter">
-            <Badge bg="danger">0</Badge>
-    </span>
-            <span className="navcart">
+            {/* <span className="navcart">
                 {Navholder.NavCart}
-           </span>
+           </span> */}
  </div>
 
     </div>
+</div>
 
 
        <div onClick={ToggleMenu} className="Navmenu">
@@ -75,9 +81,11 @@
             <BiMenuAltLeft size="30"/>
         }
        </div>
+    
+</div>
 
-        </div>
-    </Container>
+
+
 
     </div>
 
@@ -100,8 +108,6 @@
             NavlogoAlt:"gozzybylogo",
             Navsignin:"Sign in",
             NavAccount:"Account",
-            NavCart:"Total",
-            NavPlaceholder:"Search for products..",
             NavSelectAllCategories:"All Categories",
         }
     ]

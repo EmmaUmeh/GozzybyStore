@@ -24,11 +24,11 @@ input{
   background-color: #ffffff;
   box-shadow: 16px 8px 16px 8px rgb(0,0,0,0.1);
 }
-.Navchild{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10px 5px 10px 5px;
+.Navchildsearch{
+  display:flex;
+   justify-content: space-around;
+   align-items:center;
+   padding:10px 5px 10px 5px;
 }
 .Navlogo{
   width: 15%;
@@ -43,14 +43,7 @@ input{
   border-radius: 5px;
   border: 1px solid #DDDDDD;
 }
-.Navsearch{
-  background-color: #38B6FF;
-padding: 8px 15px 8px 15px;
-border-radius: 5px;
-position: relative;
-right: 48px;
-color: #FFFFFF;
-}
+
 .UserAccount{
   display: flex;
   cursor: pointer;
@@ -82,15 +75,13 @@ margin-top: -5px;
 }
 .Herocategories{
   background: rgba(217, 217, 217, 0.2);
-  box-shadow: 16px 8px 16px 8px rgb(0,0,0,0.1);
-  width: 36%;
-  /* padding: 5px 10px 5px 0px; */
+  width: 35%;
 }
 .Herocategories li{
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
-  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-top: 27px;
 }
 .categorytxt{
   background-color: #FF1122;
@@ -109,10 +100,108 @@ margin-top: -5px;
   margin-bottom: 5px;
 }
 
-
+.flashsale{
+  /* margin-top: 60px; */
+padding: 30px 20px 30px 20px;
+  width: 100%;
+  background-color: white;
+}
+.dataimg{
+  width: 32%;
+}
 /* Media Queries */
 @media screen and (max-width:578px){
   .Navmenu{
   display: block;
+  z-index: 1;
+  }
+.Navlogo{
+  width: 40%;
+}
+.Navchildsearch{
+  display: block;
+  position: fixed;
+  top: 0;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 16px 8px 16px 8px rgb(0,0,0,0.1);
+  padding: 70px 3px 10px 3px;
+  /* background-color: red; */
+    /* display: none; */
+
+  }
+  .Navinputcont{
+    position: relative;
+    left: 20px;
+  }
+.expanded{
+display: none;
+}
+  .Navinput input{
+    padding: 8px 30px 8px 8px;
+    border-radius: 5px;
+    border: 1px solid #DDDDDD;
+    
+  }
+
+  .flashsalechild{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .dataimg{
+    width: 89%;
+  }
+}
+
+@media  (min-width:579px) and (max-width:999px){
+  .Navmenu{
+    display: block;
+    z-index: 1;
+    }
+  .Navlogo{
+    width: 35%;
+  }
+  .Navchildsearch{
+    display: block;
+    position: fixed;
+    top: 0;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    background-color: #DDDDDD;
+    padding: 70px 3px 10px 3px;
+    /* background-color: red; */
+      /* display: none; */
+  
+    }
+    .Navinputcont{
+      position: relative;
+      left: 20px;
+    }
+  .expanded{
+  display: none;
+  }
+    .Navinput input{
+      padding: 8px 30px 8px 8px;
+      border-radius: 5px;
+      border: 1px solid #DDDDDD;
+      
+    }
+  .flashsalechild{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .dataimg{
+    width: 89%;
   }
 }
