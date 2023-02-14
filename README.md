@@ -5,7 +5,7 @@ This is an E-commerce website Landing page built using React,Chakra Ui,Fake Stor
 
 ### Landing Page
 
-<img src="./assets/Gozzybyscreenshot.png" />
+<img src="./public/assets/Gozzybyscreenshot.png" />
 
 
 ### Tech Stack
