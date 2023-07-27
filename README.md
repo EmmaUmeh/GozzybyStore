@@ -11,5 +11,8 @@ This is an E-commerce website Landing page built using React,Chakra Ui,Fake Stor
 ### Tech Stack
 
 - React
+- Javascript
 - Chakra Ui
+
+### API
 - Fake Store Api
